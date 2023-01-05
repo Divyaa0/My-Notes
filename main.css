@@ -1,0 +1,226 @@
+:root {
+  --dark: #374151;
+  --darker: #1f2937;
+  --darkest: #111827;
+  --grey: #6b7280;
+  --pink: #ec4899;
+  --purple: #8b5cf6;
+  --light: #eee;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI Emoji";
+}
+header {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--light);
+
+  /* background-color: black; */
+  background-image: url("coff.jpg");
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+
+  animation-name: exam;
+  animation-duration: 2s;
+}
+@keyframes exam {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--light);
+  /* color: white; */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#task-form {
+  display: flex;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+  appearance: none;
+}
+
+#new-task {
+  flex: 1 1 0%;
+  /* background-color: var(--darker); */
+  background-color: #565656;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  padding: 2rem;
+  /* border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; */
+  margin-right: 1rem;
+  color: var(--light);
+  font-size: 1.25rem;
+}
+
+#new-task::placeholder {
+  color: var(--grey);
+}
+.add_task{
+	display: flex;
+	background-color: #EF9A53;
+	margin-left: -1rem;
+	/* float: right; */
+}
+
+#task-submit {
+  /* color: var(--pink); */
+  /* color: #CE7777; */
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-color: var(--darker);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#task-submit:hover {
+  opacity: 0.4;
+  background-color:var(--darker);
+}
+
+#task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.task-list {
+  padding: 1rem;
+}
+
+.task-list h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--light);
+  margin-bottom: 1rem;
+}
+
+#tasks .task {
+  display: flex;
+  width: 45%;
+  margin: 10px;
+  justify-content:space-between;
+    float: left;
+  background-color: var(--darkest);
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  padding: 1rem;
+  /* border-radius: 1rem; */
+
+
+  margin-bottom: 1rem;
+  animation-name: example;
+
+  animation-duration: 2s;
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; */
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  transition: 1s;
+  cursor: pointer;
+}
+@keyframes example {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#tasks .task:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+
+.task .content {
+  flex: 1 1 0%;
+}
+
+.task .content .text {
+  color: var(--light);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+  color: var(--darkest);
+}
+
+.task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.task .actions button:hover {
+  opacity: 0.5;
+}
+
+.task .actions button:active {
+  opacity: 0.5;
+}
+
+.task .actions .edit {
+  /* background-image: linear-gradient(to right, var(--pink), var(--purple)); */
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+  color: #EF9A53;
+}
+
